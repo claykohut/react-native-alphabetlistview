@@ -130,6 +130,11 @@ export default class SelectableSectionsListView extends Component {
   }
 
   renderSectionHeader(sectionData, sectionId) {
+    // GG Addition
+    if (sectionData.length === 0){
+      return false
+    }
+
     const updateTag = this.props.useDynamicHeights ?
       this.updateTagInSectionMap :
       null;
@@ -246,7 +251,7 @@ export default class SelectableSectionsListView extends Component {
     });
 
     props.style = void 0;
-
+    // GG Addition with the enable empty sections
     return (
       <View ref="view" style={[styles.container, this.props.style]}>
         <ListView
