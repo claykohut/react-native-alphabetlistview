@@ -143,15 +143,24 @@ export default class SelectableSectionsListView extends Component {
       this.props.getSectionTitle(sectionId) :
       sectionId;
 
-    return (
-      <SectionHeader
-        component={this.props.sectionHeader}
-        title={title}
-        sectionId={sectionId}
-        sectionData={sectionData}
-        updateTag={updateTag}
-      />
-    );
+
+
+
+      if(sectionData.length > 0){
+        return (
+          <SectionHeader
+            component={this.props.sectionHeader}
+            title={title}
+            sectionId={sectionId}
+            sectionData={sectionData}
+            updateTag={updateTag}
+          />
+        );
+      } else {
+        return (
+          <View></View>
+        )
+      }
   }
 
   renderFooter() {
