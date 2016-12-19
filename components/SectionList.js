@@ -137,7 +137,7 @@ export default class SectionList extends Component {
     });
 
     return (
-      <View ref="view" style={[styles.container, this.props.style]}
+      <View ref="view" style={[styles.container, this.props.style, styles.hide]}
         onStartShouldSetResponder={returnTrue}
         onMoveShouldSetResponder={returnTrue}
         onResponderGrant={this.detectAndScrollToSection}
@@ -191,7 +191,10 @@ const styles = StyleSheet.create({
     top: 0,
     bottom: 0
   },
-
+  hide: {
+    height: 0,
+    opacity: 0
+  },
   item: {
     padding: 0
   },
